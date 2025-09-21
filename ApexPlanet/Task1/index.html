@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>PRAMANA 2025 GITAM Hyderabad | Registration Form</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="background-image"></div>
+    <div class="background-overlay"></div>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h1 class="card-title">PRAMANA 2025</h1>
+                <p class="card-description">Register for the most exciting college fest of the year!</p>
+                <div class="badges">
+                    <span class="badge">
+                        📅 March 15-17, 2025
+                    </span>
+                    <span class="badge">3 Days of Fun</span>
+                    <span class="badge">50+ Events</span>
+                </div>
+            </div>
+
+            <div class="card-content">
+                <form class="form" id="registrationForm" novalidate>
+                    <!-- Personal Information -->
+                    <div class="section">
+                        <div class="section-header">
+                            <span class="icon">👤</span>
+                            <h3>Personal Information</h3>
+                        </div>
+
+                        <div class="grid grid-cols-2">
+                            <div class="field">
+                                <label class="label" for="firstName">First Name *</label>
+                                <input 
+                                    type="text" 
+                                    id="firstName" 
+                                    name="firstName" 
+                                    class="input" 
+                                    placeholder="Enter your first name"
+                                    required
+                                >
+                                <div class="error" id="firstName-error"></div>
+                            </div>
+
+                            <div class="field">
+                                <label class="label" for="lastName">Last Name *</label>
+                                <input 
+                                    type="text" 
+                                    id="lastName" 
+                                    name="lastName" 
+                                    class="input" 
+                                    placeholder="Enter your last name"
+                                    required
+                                >
+                                <div class="error" id="lastName-error"></div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2">
+                            <div class="field">
+                                <label class="label" for="email">Email Address *</label>
+                                <div class="input-wrapper">
+                                    <span class="input-icon">📧</span>
+                                    <input 
+                                        type="email" 
+                                        id="email" 
+                                        name="email" 
+                                        class="input input-with-icon" 
+                                        placeholder="your.email@example.com"
+                                        required
+                                    >
+                                </div>
+                                <div class="error" id="email-error"></div>
+                            </div>
+
+                            <div class="field">
+                                <label class="label" for="phone">Phone Number *</label>
+                                <div class="input-wrapper">
+                                    <span class="input-icon">📱</span>
+                                    <input 
+                                        type="tel" 
+                                        id="phone" 
+                                        name="phone" 
+                                        class="input input-with-icon" 
+                                        placeholder="9876543210"
+                                        required
+                                    >
+                                </div>
+                                <div class="error" id="phone-error"></div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2">
+                            <div class="field">
+                                <label class="label" for="college">College/University *</label>
+                                <div class="input-wrapper">
+                                    <span class="input-icon">🎓</span>
+                                    <input 
+                                        type="text" 
+                                        id="college" 
+                                        name="college" 
+                                        class="input input-with-icon" 
+                                        placeholder="Enter your college name"
+                                        required
+                                    >
+                                </div>
+                                <div class="error" id="college-error"></div>
+                            </div>
+
+                            <div class="field">
+                                <label class="label" for="yearOfStudy">Year of Study *</label>
+                                <select id="yearOfStudy" name="yearOfStudy" class="select" required>
+                                    <option value="">Select your year</option>
+                                    <option value="1st-year">1st Year</option>
+                                    <option value="2nd-year">2nd Year</option>
+                                    <option value="3rd-year">3rd Year</option>
+                                    <option value="4th-year">4th Year</option>
+                                    <option value="postgraduate">Postgraduate</option>
+                                </select>
+                                <div class="error" id="yearOfStudy-error"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="separator"></div>
+
+                    <!-- Participation Type -->
+                    <div class="section">
+                        <div class="section-header">
+                            <span class="icon">👥</span>
+                            <h3>Participation Type</h3>
+                        </div>
+
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" id="individual" name="participationType" value="individual" class="radio" checked>
+                                <label for="individual" class="label">Individual</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="team" name="participationType" value="team" class="radio">
+                                <label for="team" class="label">Team</label>
+                            </div>
+                        </div>
+
+                        <div class="team-fields" id="teamFields">
+                            <div class="grid grid-cols-2">
+                                <div class="field">
+                                    <label class="label" for="teamName">Team Name *</label>
+                                    <input 
+                                        type="text" 
+                                        id="teamName" 
+                                        name="teamName" 
+                                        class="input" 
+                                        placeholder="Enter your team name"
+                                    >
+                                    <div class="error" id="teamName-error"></div>
+                                </div>
+
+                                <div class="field">
+                                    <label class="label" for="teamSize">Team Size *</label>
+                                    <select id="teamSize" name="teamSize" class="select">
+                                        <option value="">Select team size</option>
+                                        <option value="2">2 Members</option>
+                                        <option value="3">3 Members</option>
+                                        <option value="4">4 Members</option>
+                                        <option value="5">5 Members</option>
+                                        <option value="6">6+ Members</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="separator"></div>
+
+                    <!-- Event Selection -->
+                    <div class="section">
+                        <div class="section-header">
+                            <h3>Select Events *</h3>
+                        </div>
+                        <p style="color: var(--muted-foreground); margin-bottom: 1rem;">Choose the events you want to participate in</p>
+
+                        <div class="event-categories">
+                            <!-- Technical Events -->
+                            <div class="event-category">
+                                <div class="category-header">
+                                    <span class="icon">💻</span>
+                                    <h4 class="category-title">Technical</h4>
+                                </div>
+                                <div class="checkbox-group">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="coding" name="events" value="Coding Competition" class="checkbox">
+                                        <label for="coding" class="checkbox-label">Coding Competition</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="webdev" name="events" value="Web Development" class="checkbox">
+                                        <label for="webdev" class="checkbox-label">Web Development</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="appdev" name="events" value="App Development" class="checkbox">
+                                        <label for="appdev" class="checkbox-label">App Development</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="robotics" name="events" value="Robotics" class="checkbox">
+                                        <label for="robotics" class="checkbox-label">Robotics</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="aiml" name="events" value="AI/ML Workshop" class="checkbox">
+                                        <label for="aiml" class="checkbox-label">AI/ML Workshop</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="cybersecurity" name="events" value="Cybersecurity Challenge" class="checkbox">
+                                        <label for="cybersecurity" class="checkbox-label">Cybersecurity Challenge</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Cultural Events -->
+                            <div class="event-category">
+                                <div class="category-header">
+                                    <span class="icon">🎵</span>
+                                    <h4 class="category-title">Cultural</h4>
+                                </div>
+                                <div class="checkbox-group">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="dance" name="events" value="Dance Competition" class="checkbox">
+                                        <label for="dance" class="checkbox-label">Dance Competition</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="singing" name="events" value="Singing Competition" class="checkbox">
+                                        <label for="singing" class="checkbox-label">Singing Competition</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="drama" name="events" value="Drama/Theatre" class="checkbox">
+                                        <label for="drama" class="checkbox-label">Drama/Theatre</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="fashion" name="events" value="Fashion Show" class="checkbox">
+                                        <label for="fashion" class="checkbox-label">Fashion Show</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="art" name="events" value="Art Exhibition" class="checkbox">
+                                        <label for="art" class="checkbox-label">Art Exhibition</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="photography" name="events" value="Photography Contest" class="checkbox">
+                                        <label for="photography" class="checkbox-label">Photography Contest</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Sports Events -->
+                            <div class="event-category">
+                                <div class="category-header">
+                                    <span class="icon">🏆</span>
+                                    <h4 class="category-title">Sports</h4>
+                                </div>
+                                <div class="checkbox-group">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="cricket" name="events" value="Cricket" class="checkbox">
+                                        <label for="cricket" class="checkbox-label">Cricket</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="football" name="events" value="Football" class="checkbox">
+                                        <label for="football" class="checkbox-label">Football</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="basketball" name="events" value="Basketball" class="checkbox">
+                                        <label for="basketball" class="checkbox-label">Basketball</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="volleyball" name="events" value="Volleyball" class="checkbox">
+                                        <label for="volleyball" class="checkbox-label">Volleyball</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="badminton" name="events" value="Badminton" class="checkbox">
+                                        <label for="badminton" class="checkbox-label">Badminton</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="tabletennis" name="events" value="Table Tennis" class="checkbox">
+                                        <label for="tabletennis" class="checkbox-label">Table Tennis</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Gaming Events -->
+                            <div class="event-category">
+                                <div class="category-header">
+                                    <span class="icon">🎮</span>
+                                    <h4 class="category-title">Gaming</h4>
+                                </div>
+                                <div class="checkbox-group">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="bgmi" name="events" value="BGMI Tournament" class="checkbox">
+                                        <label for="bgmi" class="checkbox-label">BGMI Tournament</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="freefire" name="events" value="Free Fire" class="checkbox">
+                                        <label for="freefire" class="checkbox-label">Free Fire</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="valorant" name="events" value="Valorant" class="checkbox">
+                                        <label for="valorant" class="checkbox-label">Valorant</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="fifa" name="events" value="FIFA" class="checkbox">
+                                        <label for="fifa" class="checkbox-label">FIFA</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="chess" name="events" value="Chess" class="checkbox">
+                                        <label for="chess" class="checkbox-label">Chess</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="esports" name="events" value="Esports Championship" class="checkbox">
+                                        <label for="esports" class="checkbox-label">Esports Championship</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="error" id="events-error"></div>
+
+                        <div class="selected-events" id="selectedEvents">
+                            <h4>Selected Events (<span id="eventCount">0</span>)</h4>
+                            <div class="event-badges" id="eventBadges"></div>
+                        </div>
+                    </div>
+
+                    <div class="separator"></div>
+
+                    <!-- Emergency Contact -->
+                    <div class="section">
+                        <div class="section-header">
+                            <h3>Emergency Contact</h3>
+                        </div>
+
+                        <div class="grid grid-cols-2">
+                            <div class="field">
+                                <label class="label" for="emergencyContact">Emergency Contact Name *</label>
+                                <input 
+                                    type="text" 
+                                    id="emergencyContact" 
+                                    name="emergencyContact" 
+                                    class="input" 
+                                    placeholder="Parent/Guardian name"
+                                    required
+                                >
+                                <div class="error" id="emergencyContact-error"></div>
+                            </div>
+
+                            <div class="field">
+                                <label class="label" for="emergencyPhone">Emergency Contact Phone *</label>
+                                <input 
+                                    type="tel" 
+                                    id="emergencyPhone" 
+                                    name="emergencyPhone" 
+                                    class="input" 
+                                    placeholder="9876543210"
+                                    required
+                                >
+                                <div class="error" id="emergencyPhone-error"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="separator"></div>
+
+                    <!-- Additional Information -->
+                    <div class="section">
+                        <div class="section-header">
+                            <h3>Additional Information</h3>
+                        </div>
+
+                        <div class="field">
+                            <label class="label" for="dietaryRestrictions">Dietary Restrictions/Allergies</label>
+                            <textarea 
+                                id="dietaryRestrictions" 
+                                name="dietaryRestrictions" 
+                                class="textarea" 
+                                placeholder="Please mention any dietary restrictions or allergies"
+                                rows="3"
+                            ></textarea>
+                        </div>
+
+                        <div class="field">
+                            <label class="label" for="referralSource">How did you hear about Pramana 2025?</label>
+                            <select id="referralSource" name="referralSource" class="select">
+                                <option value="">Select source</option>
+                                <option value="social-media">Social Media</option>
+                                <option value="friends">Friends</option>
+                                <option value="college-notice">College Notice</option>
+                                <option value="website">Website</option>
+                                <option value="previous-participant">Previous Participant</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="previousParticipation" name="previousParticipation" class="checkbox">
+                            <label for="previousParticipation" class="checkbox-label">
+                                I have participated in previous editions of Pramana
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="separator"></div>
+
+                    <!-- Registration Fee -->
+                    <div class="fee-section">
+                        <h3 style="margin-bottom: 1rem;">Registration Fee</h3>
+                        <div class="fee-grid">
+                            <div class="fee-card">
+                                <div class="fee-label">Individual</div>
+                                <div class="fee-amount">₹500</div>
+                            </div>
+                            <div class="fee-card">
+                                <div class="fee-label">Team (2-4 members)</div>
+                                <div class="fee-amount">₹1,500</div>
+                            </div>
+                            <div class="fee-card">
+                                <div class="fee-label">Team (5+ members)</div>
+                                <div class="fee-amount">₹2,000</div>
+                            </div>
+                        </div>
+                        <p style="font-size: 0.875rem; color: var(--muted-foreground);">
+                            * Registration fee includes event participation, meals, and Pramana merchandise
+                        </p>
+                    </div>
+
+                    <!-- Terms and Conditions -->
+                    <div class="section">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="terms" name="terms" class="checkbox" required>
+                            <label for="terms" class="checkbox-label">
+                                I agree to the <a href="#" style="color: var(--primary); text-decoration: underline;">terms and conditions</a>
+                                and <a href="#" style="color: var(--primary); text-decoration: underline;">privacy policy</a>
+                            </label>
+                        </div>
+                        <div class="error" id="terms-error"></div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="button">
+                        Complete Registration
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Elements -->
+    <div class="floating-element floating-1"></div>
+    <div class="floating-element floating-2"></div>
+    <div class="floating-element floating-3"></div>
+        <script src="script.js"></script>
+    </body>
+</html>
