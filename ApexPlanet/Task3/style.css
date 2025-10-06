@@ -44,6 +44,12 @@ body {
     transition: opacity 0.3s ease-in-out;
 }
 
+/* Default visibility states (toggled by JS) */
+.screen { display: none; }
+.flag-container { display: none; }
+.feedback-card { display: none; }
+.quiz-navigation { display: none; }
+
 /* Hero Section */
 .hero-section {
     position: relative;

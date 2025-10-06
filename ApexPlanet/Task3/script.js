@@ -156,61 +156,76 @@ class CountryQuiz {
         if (randomCountries.length < 4) return null;
         
         const correctCountry = randomCountries[0];
-        const correctAnswer = 0;
         
         let question;
         
         switch (category) {
             case 'capitals':
-                question = {
-                    text: `What is the capital of ${correctCountry.name.common}?`,
-                    options: randomCountries.map(country => country.capital[0]),
-                    correctAnswer,
-                    countryCode: correctCountry.cca2,
-                    explanation: `The capital of ${correctCountry.name.common} is ${correctCountry.capital[0]}.`,
-                    flagUrl: null
-                };
+                {
+                    const correctCapital = correctCountry.capital[0];
+                    const options = this.shuffleArray(randomCountries.map(country => country.capital[0]));
+                    question = {
+                        text: `What is the capital of ${correctCountry.name.common}?`,
+                        options,
+                        correctAnswer: options.indexOf(correctCapital),
+                        countryCode: correctCountry.cca2,
+                        explanation: `The capital of ${correctCountry.name.common} is ${correctCountry.capital[0]}.`,
+                        flagUrl: null
+                    };
+                }
                 break;
                 
             case 'flags':
-                question = {
-                    text: `Which country does this flag belong to?`,
-                    options: randomCountries.map(country => country.name.common),
-                    correctAnswer,
-                    countryCode: correctCountry.cca2,
-                    explanation: `This is the flag of ${correctCountry.name.common}.`,
-                    flagUrl: correctCountry.flags.png
-                };
+                {
+                    const correctName = correctCountry.name.common;
+                    const options = this.shuffleArray(randomCountries.map(country => country.name.common));
+                    question = {
+                        text: `Which country does this flag belong to?`,
+                        options,
+                        correctAnswer: options.indexOf(correctName),
+                        countryCode: correctCountry.cca2,
+                        explanation: `This is the flag of ${correctCountry.name.common}.`,
+                        flagUrl: correctCountry.flags.png
+                    };
+                }
                 break;
                 
             case 'geography':
-                question = {
-                    text: `Which region does ${correctCountry.name.common} belong to?`,
-                    options: this.shuffleArray([
+                {
+                    const options = this.shuffleArray([
                         correctCountry.region,
                         ...this.getRandomRegions(3).filter(region => region !== correctCountry.region)
-                    ]),
-                    correctAnswer: 0,
-                    countryCode: correctCountry.cca2,
-                    explanation: `${correctCountry.name.common} is located in ${correctCountry.region}.`,
-                    flagUrl: null
-                };
+                    ]);
+                    question = {
+                        text: `Which region does ${correctCountry.name.common} belong to?`,
+                        options,
+                        correctAnswer: options.indexOf(correctCountry.region),
+                        countryCode: correctCountry.cca2,
+                        explanation: `${correctCountry.name.common} is located in ${correctCountry.region}.`,
+                        flagUrl: null
+                    };
+                }
                 break;
                 
             case 'population':
-                const populations = randomCountries.map(country => ({
-                    country: country.name.common,
-                    population: country.population
-                })).sort((a, b) => b.population - a.population);
-                
-                question = {
-                    text: `Which of these countries has the largest population?`,
-                    options: this.shuffleArray(populations.map(item => item.country)),
-                    correctAnswer: question.options ? question.options.indexOf(populations[0].country) : 0,
-                    countryCode: correctCountry.cca2,
-                    explanation: `${populations[0].country} has the largest population with ${this.formatNumber(populations[0].population)} people.`,
-                    flagUrl: null
-                };
+                {
+                    const populations = randomCountries
+                        .map(country => ({
+                            country: country.name.common,
+                            population: country.population
+                        }))
+                        .sort((a, b) => b.population - a.population);
+                    const options = this.shuffleArray(populations.map(item => item.country));
+                    const correctCountryName = populations[0].country;
+                    question = {
+                        text: `Which of these countries has the largest population?`,
+                        options,
+                        correctAnswer: options.indexOf(correctCountryName),
+                        countryCode: correctCountry.cca2,
+                        explanation: `${populations[0].country} has the largest population with ${this.formatNumber(populations[0].population)} people.`,
+                        flagUrl: null
+                    };
+                }
                 break;
                 
             default:
@@ -499,7 +514,7 @@ class CountryQuiz {
 
 // Initialize the quiz when the page loads
 document.addEventListener('DOMContentLoaded', () => {
-    new CountryQuiz();
+    window.quiz = new CountryQuiz();
 });
 
 // Add some additional utility functions for better UX
@@ -524,9 +539,4 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// Store quiz instance globally for keyboard events
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        window.quiz = new CountryQuiz();
-    }, 100);
-});
+// Store quiz instance is set during DOMContentLoaded
