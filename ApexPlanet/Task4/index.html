@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Meta tags for character encoding and responsive viewport -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- External stylesheet link -->
+        <link rel="stylesheet" href="style.css" />
+        <title>Personal Portfolio</title>
+    </head>
+    <body>
+        <!-- Navigation Sidebar -->
+        <div class="navigation-sidebar">
+            <nav>
+                <div class="nav-link" id="close-button" onclick="hideSideBar()">
+                    <a href="#">
+                        <!-- Close icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="#000">
+                            <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="nav-link"><a href="index.html">Home</a></div>
+                <div class="nav-link"><a href="work/index.html">Work</a></div>
+                <div class="nav-link">
+                    <a href="projects/index.html">Projects</a>
+                </div>
+            </nav>
+        </div>
+        <!-- Main Navigation Menu -->
+        <div class="navigation">
+            <nav>
+                <div class="nav-link" id="hideLinks"><a href="index.html">Home</a></div>
+                <div class="nav-link" id="hideLinks"><a href="work/index.html">Work</a></div>
+                <div class="nav-link" id="hideLinks">
+                    <a href="projects/index.html">Projects</a>
+                </div>
+                <div class="nav-link" id="menubar" onclick="showSideBar()">
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="#000"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
+                        </svg>
+                    </a>
+                </div>
+            </nav>
+        </div>
+        <!-- Header Section: Contains navigation and introduction -->
+        <div class="head">
+            <!-- Introduction Section: Hero area with personal info and image -->
+            <div class="introduction">
+                <div class="intro">
+                    <p id="intro-bold">Hi, I am Fanidhar, Web Developer</p>
+                    <p id="intro-normal">
+                        I am a passionate web developer with a strong foundation
+                        in HTML, CSS, and JavaScript. I am currently pursuing my
+                        B.Tech in Computer Science and Engineering at GITAM
+                        University, Hyderabad. I am a quick learner and I am
+                        always looking for new challenges and opportunities to
+                        grow.
+                    </p>
+                    <a href="assets/Resume.pdf" download
+                        ><button type="button">DOWNLOAD RESUME</button></a
+                    >
+                </div>
+                <!-- Profile Image Section -->
+                <div class="image">
+                    <div id="image1">
+                        <img src="assets/profile.jpg" alt="profile pic" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Section: Recent Projects -->
+        <div class="main">
+            <div class="header-container">
+                <div class="h4"><h4>Recent Projects</h4></div>
+                <div class="a"><a href="projects/index.html">View all</a></div>
+            </div>
+            <!-- Project Cards Container -->
+            <div class="posts-row">
+                <!-- Project Card 1 -->
+                <div class="post-card">
+                    <h5>Designing an E-commerce Website: Amazon Clone</h5>
+                    <div class="meta">
+                        <span>28 December 2025</span>
+                        <span class="divider">|</span>
+                        <span
+                            >HTML, CSS, JavaScript, React, Node.js,
+                            MongoDB</span
+                        >
+                    </div>
+                    <p>
+                        Amet minim mollit non deserunt ullamco est sit aliqua
+                        dolor do amet sint. Velit officia consequat duis enim
+                        velit mollit. Exercitation veniam consequat sunt nostrud
+                        amet.
+                    </p>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="post-card">
+                    <h5>
+                        Creating and Hosting a Tourism Website: BapatlaTourism
+                    </h5>
+                    <div class="meta">
+                        <div>1st April 2026</div>
+                        <div class="divider">|</div>
+                        <div>
+                            HTML, CSS, JavaScript, React, Node.js, MongoDB, SQL
+                        </div>
+                    </div>
+                    <p>
+                        Amet minim mollit non deserunt ullamco est sit aliqua
+                        dolor do amet sint. Velit officia consequat duis enim
+                        velit mollit. Exercitation veniam consequat sunt nostrud
+                        amet.
+                    </p>
+                </div>
+                <!-- Project Card 3 -->
+                <div class="post-card">
+                    <h5>A Simple chatting application: Whatsapp Clone</h5>
+                    <div class="meta">
+                        <span>30th June 2026</span>
+                        <span class="divider">|</span>
+                        <span
+                            >HTML, CSS, JavaScript, React, Node.js,
+                            MongoDB</span
+                        >
+                    </div>
+                    <p>
+                        Amet minim mollit non deserunt ullamco est sit aliqua
+                        dolor do amet sint. Velit officia consequat duis enim
+                        velit mollit. Exercitation veniam consequat sunt nostrud
+                        amet.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Section: Featured Works -->
+        <div class="foot">
+            <h3>Featured Works</h3>
+            <!-- Featured Work 1 -->
+            <div class="works1">
+                <div class="Image">
+                    <img src="assets/main_dev.jpg" alt="main_dev" />
+                </div>
+                <div class="matter">
+                    <h2 class="heading">
+                        BapatlaTourism: A Full-fledged Tourism Website
+                    </h2>
+                    <div class="spans">
+                        <div class="year">2026</div>
+                        <div class="title">Website</div>
+                    </div>
+                    <p class="extra-matter">
+                        A Tourism or Travel website which is used to guide and
+                        give information about the places in and around Bapatla
+                        which is explorable or unexplored. This is not a travel
+                        agency or any business website. This is designed and
+                        built to aware the tourists who wanted to explore the
+                        unexplored. Please spare some time to visit our website.
+                        It is still in build stage and not available for public.
+                    </p>
+                </div>
+            </div>
+            <hr />
+            <!-- Featured Work 2 -->
+            <div class="works2">
+                <div class="Image">
+                    <img src="assets/main_dev.jpg" alt="main_dev" />
+                </div>
+                <div class="matter">
+                    <h2 class="heading">
+                        Designing Personal Portfolio using raw HTML&CSS
+                    </h2>
+                    <div class="spans">
+                        <div class="year">2025</div>
+                        <div class="title">Web Design</div>
+                    </div>
+                    <p class="extra-matter">
+                        The web portfolio you're in right now is designed using
+                        HTML & CSS (raw: without using any framework or
+                        libraries) which is a part of my Full-stack web
+                        development course, to showcase my coding skills to the
+                        people who are interested in coding and technologies.
+                    </p>
+                </div>
+            </div>
+            <hr />
+            <!-- Featured Work 3 -->
+            <div class="works3">
+                <div class="Image">
+                    <img src="assets/main_dev.jpg" alt="main_dev" />
+                </div>
+                <div class="matter">
+                    <h2 class="heading">Smart Garbage Segregator</h2>
+                    <div class="spans">
+                        <div class="year">2024</div>
+                        <div class="title">College Project</div>
+                    </div>
+                    <p class="extra-matter">
+                        This was a group project which was a part of my course
+                        which was offered by my college. It is a type of dustbin
+                        which segregates garbage into three bins, which are Dry
+                        bin, wet bin and metal bin, and these are detected by
+                        three sensors, Infrared(dry), Raindrop sensor(wet), and
+                        Proximity Switch(Metal).
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social Media Links Section -->
+        <div class="social">
+            <div class="links">
+                <a href="https://www.instagram.com/developerfanidhar/">
+                    <img
+                        src="assets/icons/icons8-instagram.svg"
+                        alt="Instagram icon"
+                    />
+                </a>
+            </div>
+            <div class="links">
+                <a href="https://www.linkedin.com/in/fanidhargavini2006">
+                    <img
+                        src="assets/icons/icons8-linkedin.svg"
+                        alt="LinkedIn icon"
+                    />
+                </a>
+            </div>
+            <div class="links">
+                <a href="https://github.com/DeveloperFanidhar">
+                    <img
+                        src="assets/icons/icons8-github-logo.svg"
+                        alt="GitHub icon"
+                    />
+                </a>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
