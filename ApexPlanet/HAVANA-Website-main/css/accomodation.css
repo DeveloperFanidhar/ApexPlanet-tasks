@@ -1,0 +1,264 @@
+
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 150px; /* Add space below navbar */
+    margin-left: 180px;
+}
+
+
+
+
+.buttons-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 150px;
+}
+
+.buttons-column button {
+    padding: 16px 27px;
+    border: none;
+    background-color: #FFD700; /* Yellow background */
+    color: #000; /* Black text */
+    border-radius: 100px;
+    cursor: none;
+    font-size: 14px;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+    flex-wrap: wrap;
+}
+
+.buttons-column button:hover {
+    background-color: #000; /* Black background */
+    color: #ffffff; /* Yellow text */
+}
+
+.buttons-column .special-button {
+    background-color: #2626f8; /* Distinct color for the FAQs button */
+    color: #ffffff; /* White text */
+    font-weight: bold;
+    border: none;
+    padding: 16px 27px;
+    border-radius: 100px;
+    cursor: none;
+    font-size: 14px;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.buttons-column .special-button:hover {
+    background-color: #000000; /* Darker orange on hover */
+    color: #ffffff; /* Keep white text */
+}
+
+
+
+ol, ul {
+    margin: 0;
+    padding-left: 20px;
+    color: #000; /* Black text */
+    line-height: 1.6;
+}
+
+li {
+    margin-bottom: 15px;
+}
+
+p, h2, h3 {
+    margin: 10px 0;
+    color: #000; /* Black text */
+}
+
+h2 {
+    color: #ffd700; /* Yellow headings */
+    font-weight: bold;
+    text-align: center;
+}
+
+h3 {
+    color: #000; /* Black subheadings */
+    font-weight: bold;
+}
+
+/* Highlight Important Text */
+.bold-text,
+strong {
+    color: #ffd700; /* Yellow highlights */
+    font-weight: bold;
+}
+
+/* Links */
+a {
+    color: #ffd700;
+
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+a:hover {
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Glow effect */
+}
+
+/* Contact Page Styles */
+.contact-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.contact-card {
+    flex: 1 1 calc(50% - 20px);
+    padding: 15px;
+    border: 2px solid #ffd700; /* Yellow border */
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.contact-card h3 {
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.contact-card p {
+    margin: 5px 0;
+    color: #555; /* Slightly lighter black for readability */
+}
+
+.contact-card a {
+    color: #ffd700;
+    font-weight: bold;
+}
+
+.contact-card a:hover {
+    color: #000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+ 
+
+    .contact-section {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+
+
+.display-box {
+    flex: 1;
+    margin-left: 100px;
+    margin-right: 200px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 18px;
+    display: none; /* Initially hidden */
+    height: 425px; /* Height for visual structure */
+    color: #ffffff; /* Text color */
+    overflow-y: auto; /* Add vertical scrollbar */
+    box-sizing: border-box; /* Ensure padding doesn't affect the width */
+    background-color: rgba(34, 159, 194, 0.8); /* Semi-transparent black background */   
+}
+
+/* Scrollbar styles for modern browsers */
+.display-box::-webkit-scrollbar {
+    width: 8px; /* Scrollbar width */
+}
+
+.display-box::-webkit-scrollbar-thumb {
+    background-color: #FFD700; /* Yellow thumb for scrollbar */
+    border-radius: 10px; /* Rounded scrollbar thumb */
+}
+
+.display-box::-webkit-scrollbar-thumb:hover {
+    background-color: #FFA500; /* Darker yellow on hover */
+}
+
+.display-box::-webkit-scrollbar-track {
+    background: #000; /* Black track background */
+}
+
+.buttons-column button.active-button {
+    background-color: #000; /* Black background */
+    color: #FFD700; /* Yellow text */
+}
+
+.active-box {
+    display: block;
+}
+
+@media (max-width: 1100px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 125px; /* Adjust for mobile */
+        margin-left: 0px;
+    }
+
+    .buttons-column {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .buttons-column button { /* Buttons take half the width */
+        text-align: center;
+        padding: 10px 20px;
+        font-size: 18px;
+    }
+
+    .display-box {
+        width: 90%; /* Use a relative width for mobile */
+        margin: 20px auto;
+        height: 500px;
+    }
+}
+
+@media (max-width: 790px) {
+
+    .display-box {
+        width: 100%; /* Slightly larger width for very small screens */
+        margin: 20px auto; /* Center the box */
+        height: 500px;
+    }
+}
+
+
+.glass-box {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    margin-left: 33%;
+}
+
+@media screen and (max-width: 768px) {
+    .glass-box {
+        margin-left: 12%;
+    }
+    
+}
+
+.glass-box {
+    width: 80%; /* Adjust the width */
+    max-width: 400px; /* Limit max size */
+    border-radius: 15px;
+    text-align: center;
+}
+  
+.email-icon {
+    font-size: 1.2rem;
+    color: yellow;
+    margin-right: 10px;
+}
+
+.email-text {
+    font-size: 1.2rem;
+    color: white;
+    font-weight: bold;
+}

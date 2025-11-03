@@ -1,0 +1,480 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body{
+    font-family: Poppins;
+    margin: 0;
+    background-color: #010101;
+    color: #eee;
+    overflow-x: hidden;
+    padding-top: none;
+}
+
+svg{
+    width: 25px;
+}
+header{
+    width: 200px;
+    max-width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    grid-template-rows: 50px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 199;
+}
+header .logo{
+    font-weight: bold;
+}
+header .menu{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-weight: 500;
+}
+/* css slider */
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Ensure it spans the full viewport height */
+    display: flex;
+    top: 0;
+}
+.slider .list {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Smooth transitions */
+}
+
+
+.slider .list .item{
+    position: absolute;
+    inset: 0 0 0 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: 1.5s;
+}
+
+
+.slider .list .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.slider .list .item::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(
+        to top, #000 40%, transparent
+    );
+}
+
+.slider .list .item .content {
+    position: absolute;
+    top: 28%; /* Center vertically */
+    left: 30%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Offset by 50% of its width and height */
+    width: 500px;
+    max-width: 80%;
+    z-index: 1000;
+    background: rgba(44, 44, 44, 0.5); /* Semi-transparent background */
+    padding: 20px; /* Optional padding to space out content */
+}
+
+
+.slider .item .content {
+    position: fixed;
+    z-index: 210;
+    color: #fff;
+    text-align: center;
+    padding: 30px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.slider .list .item .content p {
+    margin-top: 0; /* Ensure no extra margin at the top */
+    font-size: 1.3rem; /* Adjust font size */
+    line-height: 1.6; /* Improve readability */
+    color: #ffffff; /* Slightly lighter text color */
+}
+
+.slider .list .item .content h2{
+    font-size: 60px;
+    margin: 0;
+}
+.slider .list .item.active{
+    opacity: 1;
+    z-index: 10;
+}
+@keyframes showContent {
+    to{
+        transform: translateY(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+.slider .list .item.active p:nth-child(1),
+.slider .list .item.active h2,
+.slider .list .item.active p:nth-child(3){
+    transform: translateY(40px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent .5s .7s ease-in-out 1 forwards;
+}
+.slider .list .item.active h2{
+    animation-delay: 0.7s;
+}
+.slider .list .item.active p:nth-child(3){
+    animation-duration: 0.7s;
+}
+/* Slider Navigation Buttons (Styled with Gradient and Arrows) */
+#next, #prev {
+    position: absolute;
+    top: 45%;
+    background: #ffcc00; /* Gradient Background */
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 25px;
+    font-size: 24px; /* Size of arrows */
+    border-radius: 20%; /* Circular shape */
+    cursor: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    transition: background 0.3s, transform 0.3s ease-in-out;
+    z-index: 100;
+}
+
+/* Next Button (Right Arrow) */
+#next {
+    right: 20px;
+}
+
+#next::before {
+    content: '';
+    position: absolute;
+    top: 51%;
+    left: 17px;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left:20px solid ; /* Right arrow */
+    transform: translateY(-50%);
+}
+
+/* Previous Button (Left Arrow) */
+#prev {
+    left: 20px;
+}
+
+#prev::before {
+    content: '';
+    position: absolute;
+    top: 51%;
+    right: 17px;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 20px solid; /* Left arrow */
+    transform: translateY(-50%);
+}
+
+/* Hover and Active States */
+#next:hover, #prev:hover {
+    background: #ffcc00;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7); /* Glowing effect */
+    transform: scale(1.1);
+}
+
+#next:active, #prev:active {
+    transform: scale(1); /* Return to normal size when clicked */
+}
+
+
+
+.thumbnail{
+    position: absolute;
+    bottom: 50px;
+    z-index: 11;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    height: 250px;
+    padding: 0 50px;
+    box-sizing: border-box;
+    overflow-x: auto;
+    top: 530px;
+    overflow-y: hidden;
+    justify-content: start;
+}
+.thumbnail::-webkit-scrollbar{
+    width: 0;
+}
+.thumbnail .item{
+    width: 150px;
+    height: 220px;
+    filter: brightness(.5);
+    transition: .5s;
+    flex-shrink: 0;
+}
+
+
+.thumbnail .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.thumbnail .item.active{
+    filter: brightness(1.2);
+}
+.thumbnail .item .content{
+    position: absolute;
+    inset: auto 5px 5px 5px;
+}
+/* Style for the slider names */
+.thumbnail .item .content {
+    font-size: 1rem; /* Adjust font size if needed */
+    color: white; /* Change text color */
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    border-radius: 5px;
+    position: relative;
+    bottom: 230px;  /* Adjust the distance from the bottom */
+    left: 50%; /* Horizontally center */
+    transform: translateX(-50%); /* Fix centering */
+    padding: 10px;
+    width: 50%; /* Allow content to expand naturally */
+    max-width: 100%; /* Limit width */
+    transition: all 0.3s ease;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+
+
+
+
+@media screen and (max-width: 678px) {
+
+    .slider .list .item .content {
+        position: absolute;
+        top: 34%; /* Center vertically */
+        left: 54.5%; /* Center horizontally */
+        transform: translate(-50%, -50%); /* Offset by 50% of its width and height */
+        width: 500px;
+        max-width: 80%;
+        z-index: 1000;
+        background: rgba(44, 44, 44, 0.5); /* Semi-transparent background */
+        padding: 20px; /* Optional padding to space out content */
+    }
+    .thumbnail{
+        position: absolute;
+        bottom: 10px;
+        z-index: 11;
+        display: flex;
+        gap: 10px;
+        width: 100%;
+        height: 250px;
+        padding: 0 50px;
+        box-sizing: border-box;
+        overflow-x: auto;
+        overflow-y: hidden;
+        top: 480px;
+        justify-content: start;
+    }
+    .thumbnail .item img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    .slider .list .item .content h2{
+        font-size: 40px;
+    }
+    #next, #prev {
+        display: none;
+    }
+    .thumbnail .item .content {
+        font-size: 1rem; /* Adjust font size if needed */
+        color: white; /* Change text color */
+        background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+        border-radius: 5px;
+        position: relative;
+        bottom: 230px;  /* Adjust the distance from the bottom */
+        left: 63%; /* Horizontally center */
+        transform: translateX(-50%); /* Fix centering */
+        padding: 10px;
+        width: 50%; /* Allow content to expand naturally */
+        max-width: 100%; /* Limit width */
+        transition: all 0.3s ease;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+    
+    
+}
+
+
+/* Style for the buttons in the slider */
+.slider .buttons button {
+    background-color: #ffcc00; /* Button background color */
+    color: rgb(0, 0, 0); /* Button text color */
+    padding: 12px 24px; /* Padding around the text */
+    border: none; /* Remove border */
+    border-radius: 100px; /* Rounded corners */
+    font-size: 12px; /* Font size of the button text */
+    cursor: none; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    margin-right: 8px; /* Space between buttons */
+    flex-wrap: wrap;
+}
+
+/* Hover effect for the buttons */
+.slider .buttons button:hover {
+    background-color: #000000; /* Darker color on hover */
+    color: #ffcc00; /* Button text color */
+    transform: translateY(-2px); /* Slightly lift the button on hover */
+}
+
+
+/*.......EXPLORE.....*/
+
+/* Styling for the buttons inside slider */
+.slider button {
+    margin: 5px;
+    padding: 10px 20px;
+    cursor: none; /* Corrected cursor */
+}
+
+/* Styling for the buttons inside slider */
+.slider button {
+    margin: 5px;
+    padding: 10px 20px;
+    cursor: pointer; /* Corrected cursor */
+}
+
+/* Main container */
+.container {
+    display: none; /* Default hidden state */
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    transition: opacity 0.3s ease; /* Smooth fade-in/out */
+    background-color: rgba(27, 27, 27, 0.8);
+}
+
+/* Visible container */
+.container.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Hidden container */
+.container.hidden {
+    display: none;
+    opacity: 0;
+}
+
+/* Dynamic buttons container */
+.dynamic-buttons-container {
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    gap: 15px; /* Space between buttons */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Hidden dynamic buttons container */
+.dynamic-buttons-container.hidden {
+    display: none;
+}
+
+/* Style for dynamic buttons */
+.dynamic-button {
+    padding: 8px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid transparent;
+    border-radius: 100px;
+    cursor: none; 
+    background-color: black;
+    color: #ffcc00;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect for buttons */
+.dynamic-button:hover {
+    background-color: #ffcc00;
+    color: black;
+    transform: scale(1.1); /* Enlarge on hover */
+}
+
+/* Special button style */
+.dynamic-button.special {
+    padding: 8px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 100px;
+    background-color: #ffcc00;
+    color: black;
+    border: 2px solid black;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for special button */
+.dynamic-button.special:hover {
+    background-color: orange;
+    transform: scale(1.1); /* More pronounced enlargement */
+}
+
+/* Content boxes */
+.content-box {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #000000;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Hide content boxes */
+.content-box.hidden {
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.theme.active {
+    display: block;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+
+    .container {
+        display: none; /* Default hidden state */
+        padding: 20px;
+        margin-top: 50px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        transition: opacity 0.3s ease; /* Smooth fade-in/out */
+        background-color: rgba(27, 27, 27, 0.8);
+    }
+    .dynamic-button {
+        padding: 8px 15px; /* Smaller padding on mobile */
+        font-size: 14px; /* Reduce font size */
+        margin: 3px; /* Decrease margin for more compact layout */
+    }
+
+    .dynamic-buttons-container {
+        display: flex;
+        flex-wrap: wrap; /* Wrap buttons to avoid overflow */
+        justify-content: center; /* Center align buttons */
+    }
+}
